@@ -1,0 +1,30 @@
+@mixin card-hover-animation-small($scale: .95, $duration: 0.2s, $easing: ease-in-out) {
+	transition: transform $duration $easing;
+	&:hover,
+	&:focus {
+		transform: scale($scale);
+	}
+}
+
+@mixin card-active-animation-small($scale: 0.95, $duration: 0.2s, $easing: ease-in-out) {
+	transition: transform $duration $easing;
+	&:active {
+		transform: scale($scale);
+	}
+}
+
+@mixin card-hover-animation-big($scale: 1.05, $duration: 0.2s, $easing: ease-in-out) {
+	transition: transform $duration $easing;
+	&:hover {
+		transform: scale($scale);
+	}
+}
+
+@mixin card-active-animation-big($scale: 1.05, $duration: 0.2s, $easing: ease-in-out) {
+	transition: transform $duration $easing;
+	&:active,
+	&:focus {
+		transform: scale($scale);
+	}
+}
+

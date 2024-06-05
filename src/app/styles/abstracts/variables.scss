@@ -1,0 +1,24 @@
+:root {
+	// Цвета
+	--color-primary-light: #4C4BD6;
+	--color-primary: #4645AB;
+	--color-accent: #A5FF01;
+	--color-background-reverse: #FFFFFF;
+	--color-background-reverse-light: #F2F2F2;
+	--color-background: #000000;
+	--color-background-light: #31363F;
+
+	--shadow-s: 0px 6px 16px rgba(43, 45, 51, 0.16);
+
+	--font-family: "Open Sans", system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+	--font-large: 28px/130% var(--font-family);
+	--font-title: 24px/130% var(--font-family);
+	--font-subtitle: 20px/130% var(--font-family);
+	--font-default: 18px/130% var(--font-family);
+	--font-small: 13px/110% var(--font-family);
+
+	--font-weight-bold: 700;
+	--font-weight-semibold: 600;
+	--font-weight-regular: 400;
+}

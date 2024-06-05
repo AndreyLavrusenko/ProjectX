@@ -1,0 +1,80 @@
+@import "../../../app/styles/base/mixin";
+
+.Container {
+	position: relative;
+
+	width: 100%;
+	max-width: 380px;
+	height: 420px;
+
+	display: flex;
+
+	padding: 20px;
+
+	color: var(--color-background-reverse);
+	background-color: var(--color-primary-light);
+	border-radius: 28px;
+
+	overflow: hidden;
+
+	@include card-hover-animation-small; // Использование миксина для анимации увеличения при наведении
+	@include card-active-animation-small; // Использование миксина для анимации уменьшения при нажатии
+}
+
+.Box {
+	content: '';
+	position: absolute;
+	width: 200%; /* Увеличиваем ширину, чтобы линия достигала середины правого края */
+	height: 85px; /* Ширина линии */
+	background: var(--color-accent); /* Цвет линии */
+	z-index: 1;
+
+}
+
+.Container h1 {
+	width: 70%;
+	height: fit-content;
+}
+
+.Container img {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+
+	z-index: 2;
+}
+
+.Button {
+	position: absolute;
+	left: 15px;
+	bottom: 45px;
+
+	padding: 12px;
+
+	border-radius: 24px;
+	border: none;
+	background-color: var(--color-background);
+	color: var(--color-background-reverse);
+
+	text-decoration: none;
+	cursor: pointer;
+	z-index: 2;
+}
+
+.Button p {
+	display: flex;
+	align-items: center;
+
+	gap: 10px;
+}
+
+.Button p svg {
+
+	rect {
+		fill: var(--color-background-reverse);
+	}
+
+	path {
+		fill: var(--color-background)
+	}
+}
