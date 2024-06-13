@@ -8,6 +8,7 @@ export const Home = () => {
             <CardFullSize
                 title="full body акцент на плечи"
                 linePosition="bottom_left"
+                theme="default"
                 imageUrl={
                     "https://s3.timeweb.com/2b38a555-c1e9e5e2-6b9c-4b49-856a-259653d758ba/SPORT/CardIcon/girl.png"
                 }
@@ -16,6 +17,7 @@ export const Home = () => {
             <CardFullSize
                 title="full body корпус"
                 linePosition="bottom_right"
+                theme="default"
                 imageUrl={
                     "https://s3.timeweb.com/2b38a555-c1e9e5e2-6b9c-4b49-856a-259653d758ba/SPORT/CardIcon/girl-abs.png"
                 }
@@ -24,14 +26,16 @@ export const Home = () => {
             <CardFullSize
                 title="full body руки"
                 linePosition="left_right"
+                theme="default"
                 imageUrl={
                     "https://s3.timeweb.com/2b38a555-c1e9e5e2-6b9c-4b49-856a-259653d758ba/SPORT/CardIcon/man-arm.png"
                 }
             />
 
             <CardFullSize
-                title="full body руки"
+                title="утренняя растяжка"
                 linePosition="vertical_right"
+                theme="green"
                 imageUrl={
                     "https://s3.timeweb.com/2b38a555-c1e9e5e2-6b9c-4b49-856a-259653d758ba/SPORT/CardIcon/warmup.png"
                 }

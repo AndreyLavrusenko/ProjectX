@@ -1,0 +1,30 @@
+.Button {
+	padding: 12px;
+
+	border-radius: 24px;
+	border: none;
+	background-color: var(--color-background);
+	color: var(--color-background-reverse);
+
+	text-decoration: none;
+	cursor: pointer;
+	z-index: 2;
+}
+
+.Button p {
+	display: flex;
+	align-items: center;
+
+	gap: 10px;
+}
+
+.Button p svg {
+
+	rect {
+		fill: var(--color-background-reverse);
+	}
+
+	path {
+		fill: var(--color-background)
+	}
+}

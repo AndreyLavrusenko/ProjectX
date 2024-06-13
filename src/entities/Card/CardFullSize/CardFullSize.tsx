@@ -1,16 +1,16 @@
 import styles from "./CardFull.module.scss"
 import { Title, TitleType } from "../../../shared/ui/Text/Title";
-import { Text, TextType } from "../../../shared/ui/Text/Text";
-import { useMemo } from "react";
+import { CSSProperties, useMemo } from "react";
+import { PlayButton } from "../../../shared/ui/Button/PlayButton/PlayButton";
 
 
 interface ILinePosition {
-    left?: string,
-    right?: string,
-    top?: string,
-    bottom?: string,
-    transform?: string,
-    transformOrigin?: string
+	left?: string,
+	right?: string,
+	top?: string,
+	bottom?: string,
+	transform?: string,
+	transformOrigin?: string
 }
 
 type LinePosition = "bottom_left" | "bottom_right" | "left_right" | "vertical_right"
@@ -18,13 +18,38 @@ type LinePosition = "bottom_left" | "bottom_right" | "left_right" | "vertical_ri
 type Theme = "default" | "green"
 
 interface Props {
-    imageUrl: string,
-    title: string,
-    linePosition: LinePosition
-    theme: Theme
+	imageUrl: string,
+	title: string,
+	linePosition: LinePosition
+	theme: Theme
 }
 
-export const CardFullSize = ({imageUrl, title, linePosition, theme = "default"}: Props) => {
+export const CardFullSize = ({imageUrl, title, linePosition, theme}: Props) => {
+
+    const lineColor = useMemo(() => {
+        if (theme === "green") {
+            return {
+                backgroundColor: "#FFF",
+            }
+        }
+
+        return {
+            backgroundColor: "#A5FF01",
+        }
+
+    }, [theme])
+
+    const backgroundColor = useMemo(() => {
+        if (theme === "green") {
+            return {
+                backgroundColor: "#42C64A",
+            }
+        }
+
+        return {
+            backgroundColor: "#4C4BD6",
+        }
+    }, [theme])
 
     const lineStyle: ILinePosition = useMemo(() => {
         if (linePosition === "bottom_left") {
@@ -40,7 +65,7 @@ export const CardFullSize = ({imageUrl, title, linePosition, theme = "default"}:
             return {
                 right: "-40px",
                 bottom: "0",
-                transform: "rotate(30)",
+                transform: "rotate(30deg)",
                 transformOrigin: "top right"
             }
         }
@@ -65,8 +90,18 @@ export const CardFullSize = ({imageUrl, title, linePosition, theme = "default"}:
 
     }, [linePosition])
 
+    const buttonStyle: CSSProperties = useMemo(() => {
+        return {
+            position: "absolute",
+            left: "15px",
+            bottom: "45px",
+        }
+    }, [])
+
+    const combinedStyles = { ...lineStyle, ...lineColor };
+
     return (
-        <div className={styles.Container}>
+        <div className={styles.Container} style={backgroundColor}>
             <Title
                 type={TitleType.Large}
                 style={{textTransform: "uppercase"}}
@@ -76,23 +111,13 @@ export const CardFullSize = ({imageUrl, title, linePosition, theme = "default"}:
 
             <img src={imageUrl} alt=""/>
 
-            <button className={styles.Button}>
-                <Text type={TextType.DefaultText}>
-                    <svg width="26" height="27" viewBox="0 0 26 27" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect y="0.666626" width="26" height="25.6667" rx="12.8333"/>
-                        <path
-                            d="M19.75 12.3676C20.75 12.9449 20.75 14.3883 19.75 14.9657L10.75 20.1618C9.75 20.7392 8.5 20.0175 8.5 18.8628L8.5 8.47047C8.5 7.31577 9.75 6.59409 10.75 7.17144L19.75 12.3676Z"
-                        />
-                    </svg>
+            <PlayButton theme={theme} style={buttonStyle} text={"Старт"} />
 
-                    Старт
-                </Text>
-            </button>
             <div
-                style={lineStyle}
+                style={combinedStyles}
                 className={styles.Box}
             />
-            
+
         </div>
     )
 }
