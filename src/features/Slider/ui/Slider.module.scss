@@ -1,0 +1,17 @@
+.Slider {
+	display: flex;
+	align-items: center;
+
+	width: 100%;
+
+	gap: 10px;
+
+	white-space: nowrap;
+	overflow-x: scroll;
+}
+
+.Slider::-webkit-scrollbar {
+	width: 0;
+	display: none;
+	-webkit-appearance: none;
+}

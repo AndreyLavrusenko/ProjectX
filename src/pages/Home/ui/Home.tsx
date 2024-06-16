@@ -1,10 +1,30 @@
 import { Header } from "../../../widgets/Header/Header";
-import { CardFullSize } from "../../../entities";
+import { CardFullSize, CardSmall } from "../../../entities";
+import { Link } from "../../../shared/ui/Link/Link";
+import { Text, TextType } from "../../../shared/ui/Text/Text";
+
+import styles from "./Home.module.scss"
+import { Slider } from "../../../features/Slider";
 
 export const Home = () => {
     return (
-        <div className={"page"}>
+        <div className={styles.Page}>
             <Header>Главная</Header>
+            <div className={styles.TitleFlex}>
+                <Text type={TextType.DefaultText}>
+                    Недавние тренировки
+                </Text>
+                <Link path={"/"}>
+                    Посмотреть
+                </Link>
+            </div>
+            <Slider>
+                <CardSmall iconColor={"#42C64A"} title={"full body"} />
+                <CardSmall iconColor={"#4C4BD6"} title={"full body"} />
+                <CardSmall iconColor={"#FFE9AA"} title={"full body"} />
+                <CardSmall iconColor={"#FEBBB7"} title={"full body"} />
+            </Slider>
+
             <CardFullSize
                 title="full body акцент на плечи"
                 linePosition="bottom_left"

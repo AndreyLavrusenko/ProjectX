@@ -1,0 +1,15 @@
+.TitleFlex {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.Page {
+	width: 100%;
+
+	display: flex;
+	flex-direction: column;
+
+	gap: 20px;
+	padding: 0 20px;
+}

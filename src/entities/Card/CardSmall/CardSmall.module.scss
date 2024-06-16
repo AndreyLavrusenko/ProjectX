@@ -1,0 +1,54 @@
+.Card {
+	position: relative;
+
+	width: 120px;
+	height: 190px;
+
+	flex-shrink: 0;
+
+	background: var(--color-background-reverse);
+
+	border-radius: 24px;
+}
+
+.CardZ {
+	position: absolute;
+
+	top: 5%;
+
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.CardImage {
+	position: absolute;
+
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%, -40%);
+
+	width: 80px;
+	height: 130px;
+
+	z-index: 2;
+}
+
+.CardTitle {
+	position: absolute;
+
+	top: 95%;
+	left: 50%;
+	transform: translate(-50%, -95%);
+
+	text-overflow: ellipsis;
+	overflow: hidden;
+	width: 100px;
+	white-space: nowrap;
+
+	color: var(--color-background);
+	font-weight: 700;
+	font-size: 18px;
+
+	text-align: center;
+	text-transform: uppercase;
+}
