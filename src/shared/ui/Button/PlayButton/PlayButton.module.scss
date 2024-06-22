@@ -3,8 +3,8 @@
 
 	border-radius: 24px;
 	border: none;
-	background-color: var(--color-background);
-	color: var(--color-background-reverse);
+	background-color: var(--color-background-black);
+	color: var(--color-background-white);
 
 	text-decoration: none;
 	cursor: pointer;
@@ -21,10 +21,10 @@
 .Button p svg {
 
 	rect {
-		fill: var(--color-background-reverse);
+		fill: var(--color-background-white);
 	}
 
 	path {
-		fill: var(--color-background)
+		fill: var(--color-background-black)
 	}
 }
