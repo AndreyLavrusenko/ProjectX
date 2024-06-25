@@ -1,30 +1,26 @@
-@mixin card-hover-animation-small($scale: .95, $duration: 0.2s, $easing: ease-in-out) {
-	transition: transform $duration $easing;
-	&:hover,
-	&:focus {
-		transform: scale($scale);
+@mixin responsive-hover-active() {
+	@media (hover: hover) and (pointer: fine) {
+		&:hover {
+			transform: var(--default-desktop-scale-animation-hover);
+		}
+
+		&:active {
+			transform: var(--default-desktop-scale-animation-active);
+		}
+	}
+
+	@media (hover: none) and (pointer: coarse) {
+		&:hover {
+			transform: var(--default-mobile-scale-animation-hover);
+		}
 	}
 }
 
-@mixin card-active-animation-small($scale: 0.95, $duration: 0.2s, $easing: ease-in-out) {
-	transition: transform $duration $easing;
+
+@mixin base-click-animation() {
+	transition: .3s;
+
 	&:active {
-		transform: scale($scale);
+		transform: var(--default-mobile-scale-animation-active);
 	}
 }
-
-@mixin card-hover-animation-big($scale: 1.05, $duration: 0.2s, $easing: ease-in-out) {
-	transition: transform $duration $easing;
-	&:hover {
-		transform: scale($scale);
-	}
-}
-
-@mixin card-active-animation-big($scale: 1.05, $duration: 0.2s, $easing: ease-in-out) {
-	transition: transform $duration $easing;
-	&:active,
-	&:focus {
-		transform: scale($scale);
-	}
-}
-

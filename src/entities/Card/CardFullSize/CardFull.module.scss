@@ -17,14 +17,22 @@
 	overflow: hidden;
 
 	@media (hover: hover) and (pointer: fine) {
+		&:hover {
+			transform: var(--default-desktop-scale-animation-hover);
+		}
+
 		&:active {
-			transform: scale(1.1);
+			transform: var(--default-desktop-scale-animation-active);
 		}
 	}
 
 	@media (hover: none) and (pointer: coarse) {
-		&:active {
-			transform: scale(.9);
+		&:hover {
+			transform: var(--default-mobile-scale-animation-hover);
+		}
+
+		&:not(:hover) {
+			transform: scale(1);
 		}
 	}
 }

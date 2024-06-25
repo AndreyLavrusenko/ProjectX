@@ -7,8 +7,17 @@
 	flex-shrink: 0;
 
 	background: var(--color-background-white);
-
 	border-radius: 24px;
+
+	transition: .2s ease-out;
+
+	&:active {
+		transform: var(--default-mobile-scale-animation-active);
+	}
+}
+
+.Card:last-child {
+	margin-right: 15px;
 }
 
 .CardZ {

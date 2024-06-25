@@ -4,18 +4,9 @@
 	justify-content: space-between;
 }
 
-.Page {
-	width: 100%;
-
+.SliderContainer {
 	display: flex;
 	flex-direction: column;
-}
 
-.PageTab {
-	padding: 16px 15px 0 15px;
-}
-
-.ScrollTab {
-	padding-top: 10px;
-	padding-left: 15px;
+	gap: 10px;
 }

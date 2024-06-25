@@ -13,6 +13,12 @@
 
 	--shadow-s: 0px 6px 16px rgba(43, 45, 51, 0.16);
 
+	--default-mobile-scale-animation-active: scale(.9);
+	--default-mobile-scale-animation-hover: scale(.95);
+
+	--default-desktop-scale-animation-active: scale(1.1);
+	--default-desktop-scale-animation-hover: scale(1.03);
+
 	--font-family: "Open Sans", system-ui, Avenir, Helvetica, Arial, sans-serif;
 
 	--font-large: 28px/130% var(--font-family);

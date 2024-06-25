@@ -1,101 +1,58 @@
-import { Header } from "../../../widgets/Header/Header";
-import { CardFullSize, CardSmall } from "../../../entities";
-import { Link } from "../../../shared/ui/Link/Link";
-import { Text, TextType } from "../../../shared/ui/Text/Text";
-
-import styles from "./Home.module.scss"
-import { Slider } from "../../../features/Slider";
-import { Button } from "../../../shared/ui/Button/PrimaryButton/Button";
-import { ArrowIcon } from "../../../shared/assets/icons/ArrowIcon";
-import { InfoBlock, InfoBlockTheme } from "../../../shared/ui/InfoBlock/InfoBlock";
-import classNames from "classnames";
+import { CardFullSize, CardSmall } from "@/entities";
+import { Button } from "@/shared/ui/Button/PrimaryButton/Button";
+import { ArrowIcon } from "@/shared/assets/icons/ArrowIcon";
+import { InfoBlock, InfoBlockTheme } from "@/shared/ui/InfoBlock/InfoBlock";
+import { Header } from "@/widgets/Header";
+import { useHomeNavigate } from "@/pages/Home/model/hooks/useHomeNavigate";
+import { SliderWidget } from "@/widgets/Slider";
 
 export const Home = () => {
+    const {watchFeed} = useHomeNavigate()
+
     return (
-        <div className={styles.Page}>
-            <div className={styles.PageTab}>
-                <Header>Главная</Header>
-            </div>
+        <div className="page">
+            <Header>Главная</Header>
 
 
-            <div className={styles.PageTab}>
-                <CardFullSize
-                    title="full body акцент на плечи"
-                    linePosition="bottom_left"
-                    theme="default"
-                    imageUrl={
-                        "https://s3.timeweb.com/2b38a555-c1e9e5e2-6b9c-4b49-856a-259653d758ba/SPORT/CardIcon/girl.png"
-                    }
-                />
-            </div>
+            <CardFullSize
+                title="full body акцент на плечи"
+                linePosition="bottom_left"
+                theme="default"
+                imageUrl={
+                    "https://s3.timeweb.com/2b38a555-c1e9e5e2-6b9c-4b49-856a-259653d758ba/SPORT/CardIcon/girl.png"
+                }
+            />
 
-            <div className={classNames(styles.TitleFlex, styles.PageTab)}>
-                <Text type={TextType.DefaultText}>
-                    Недавние тренировки
-                </Text>
-                <Link path={"/"}>
-                    Посмотреть
-                </Link>
-            </div>
-
-            <Slider className={styles.ScrollTab}>
+            <SliderWidget title={"Недавние тренировки"} link="Посмотреть" path={"/"}>
                 <CardSmall iconColor={"#42C64A"} title={"full body"} />
                 <CardSmall iconColor={"#4C4BD6"} title={"full body"} />
                 <CardSmall iconColor={"#FFE9AA"} title={"full body"} />
                 <CardSmall iconColor={"#FEBBB7"} title={"full body"} />
-            </Slider>
+            </SliderWidget>
 
-            <div className={styles.PageTab}>
-                <CardFullSize
-                    title="утренняя растяжка"
-                    linePosition="vertical_right"
-                    theme="green"
-                    imageUrl={
-                        "https://s3.timeweb.com/2b38a555-c1e9e5e2-6b9c-4b49-856a-259653d758ba/SPORT/CardIcon/warmup.png"
-                    }
-                />
-            </div>
+            <CardFullSize
+                title="утренняя растяжка"
+                linePosition="vertical_right"
+                theme="green"
+                imageUrl={
+                    "https://s3.timeweb.com/2b38a555-c1e9e5e2-6b9c-4b49-856a-259653d758ba/SPORT/CardIcon/warmup.png"
+                }
+            />
 
-            <div className={styles.PageTab}>
-                <InfoBlock
-                    theme={InfoBlockTheme.DEFAULT}
-                    text={"Перед основной тренировкой лучше уделить время разминке, что бы уменьшить риск возникновения травм"}
-                    link={"/"}
-                    buttonText={"Посмотреть"}
-                >
+            <InfoBlock
+                theme={InfoBlockTheme.DEFAULT}
+                text={"Перед основной тренировкой лучше уделить время разминке, что бы уменьшить риск возникновения травм"}
+                link={"/"}
+                buttonText={"Посмотреть"}
+            >
 
-                    Начните с разминки
-                </InfoBlock>
-            </div>
+                Начните с разминки
+            </InfoBlock>
 
-            <div className={styles.PageTab}>
-                <Button>
-                    Все тренировки
-
-                    <ArrowIcon />
-
-                </Button>
-            </div>
-
-
-            {/*<CardFullSize*/}
-            {/*    title="full body корпус"*/}
-            {/*    linePosition="bottom_right"*/}
-            {/*    theme="default"*/}
-            {/*    imageUrl={*/}
-            {/*        "https://s3.timeweb.com/2b38a555-c1e9e5e2-6b9c-4b49-856a-259653d758ba/SPORT/CardIcon/girl-abs.png"*/}
-            {/*    }*/}
-            {/*/>*/}
-
-            {/*<CardFullSize*/}
-            {/*    title="full body руки"*/}
-            {/*    linePosition="left_right"*/}
-            {/*    theme="default"*/}
-            {/*    imageUrl={*/}
-            {/*        "https://s3.timeweb.com/2b38a555-c1e9e5e2-6b9c-4b49-856a-259653d758ba/SPORT/CardIcon/man-arm.png"*/}
-            {/*    }*/}
-            {/*/>*/}
-
+            <Button onClick={watchFeed}>
+                Все тренировки
+                <ArrowIcon />
+            </Button>
 
         </div>
     )

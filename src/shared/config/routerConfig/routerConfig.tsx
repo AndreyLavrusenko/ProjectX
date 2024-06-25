@@ -1,8 +1,10 @@
 import { RouteProps } from "react-router-dom";
-import { Home } from "../../../pages/Home";
+import { Home } from "@/pages/Home";
+import { Feed } from "@/pages/Feed";
 
 export enum AppRoutes {
 	HOME = "home",
+    FEED = "feed",
 	SELECT_WORKOUT = "option",
 	WORKOUT = "workout",
 	FINISH = "finish",
@@ -11,6 +13,7 @@ export enum AppRoutes {
 
 export const RouterPath: Record<AppRoutes, string> = {
     [AppRoutes.HOME]: "/",
+    [AppRoutes.FEED]: "/feed",
     [AppRoutes.SELECT_WORKOUT]: "/select/:id",
     [AppRoutes.WORKOUT]: "/workout/:id",
     [AppRoutes.FINISH]: "/finish",
@@ -21,6 +24,10 @@ export const routeConfig: Record<AppRoutes, RouteProps> = {
     [AppRoutes.HOME]: {
         path: RouterPath.home,
         element: <Home />
+    },
+    [AppRoutes.FEED]: {
+        path: RouterPath.feed,
+        element: <Feed />
     },
     [AppRoutes.SELECT_WORKOUT]: {
         path: RouterPath.option,

@@ -21,13 +21,18 @@
 
 
 @media (hover: hover) and (pointer: fine) {
+	.Button:hover {
+		transform: var(--default-desktop-scale-animation-hover);
+	}
+
 	.Button:active {
-		transform: scale(1.1);
+		transform: var(--default-desktop-scale-animation-active);
 	}
 }
 
 @media (hover: none) and (pointer: coarse) {
-	.Button:active {
-		transform: scale(.9);
+	.Button:hover {
+		transform: var(--default-mobile-scale-animation-hover);
 	}
+
 }
