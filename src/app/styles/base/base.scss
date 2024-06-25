@@ -32,4 +32,5 @@ body {
 
 	gap: 16px;
 	padding: 20px 15px;
+	padding-bottom: calc(var(--footer-height) + 30px);
 }

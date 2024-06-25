@@ -5,6 +5,7 @@ import { InfoBlock, InfoBlockTheme } from "@/shared/ui/InfoBlock/InfoBlock";
 import { Header } from "@/widgets/Header";
 import { useHomeNavigate } from "@/pages/Home/model/hooks/useHomeNavigate";
 import { SliderWidget } from "@/widgets/Slider";
+import { Navbar } from "@/widgets/Navbar/ui/Navbar";
 
 export const Home = () => {
     const {watchFeed} = useHomeNavigate()
@@ -12,7 +13,6 @@ export const Home = () => {
     return (
         <div className="page">
             <Header>Главная</Header>
-
 
             <CardFullSize
                 title="full body акцент на плечи"
@@ -45,7 +45,6 @@ export const Home = () => {
                 link={"/"}
                 buttonText={"Посмотреть"}
             >
-
                 Начните с разминки
             </InfoBlock>
 

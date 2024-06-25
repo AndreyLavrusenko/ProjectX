@@ -1,0 +1,31 @@
+.Navbar {
+	position: fixed;
+	bottom: 0;
+
+	width: 100%;
+
+	z-index: 1000;
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	padding: 0 30px;
+
+	background: rgba(43, 44, 46, 0.699999988079071);
+	border-radius: 6px 6px 0 0;
+	backdrop-filter: blur(30px);
+}
+
+.NavItem {
+	padding: 8px 15px;
+}
+
+.Active {
+	border-top: 2px solid var(--color-accent);
+	border-radius: 2px;
+
+	svg path {
+		fill: var(--color-accent)
+	}
+}

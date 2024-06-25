@@ -1,5 +1,6 @@
 import { AppRouter } from "./providers/router";
 import { useScrollTop } from "@/shared/hooks/useScrollTop";
+import { Navbar } from "@/widgets/Navbar/ui/Navbar";
 
 function App() {
     useScrollTop();
@@ -7,6 +8,7 @@ function App() {
     return (
         <div>
             <AppRouter />
+            <Navbar />
         </div>
     );
 }
