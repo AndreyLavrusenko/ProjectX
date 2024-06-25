@@ -1,7 +1,7 @@
 import styles from "./header.module.scss"
 import { ReactNode } from "react";
-import { CoinsHeader } from "../../entities";
-import { Title, TitleType } from "../../shared/ui/Text/Title";
+import { CoinsHeader } from "@/entities";
+import { Title, TitleType } from "@/shared/ui/Text/Title";
 
 
 interface Props {

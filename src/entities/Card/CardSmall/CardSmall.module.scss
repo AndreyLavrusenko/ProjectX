@@ -6,9 +6,18 @@
 
 	flex-shrink: 0;
 
-	background: var(--color-background-reverse);
-
+	background: var(--color-background-white);
 	border-radius: 24px;
+
+	transition: .2s ease-out;
+
+	&:active {
+		transform: var(--default-mobile-scale-animation-active);
+	}
+}
+
+.Card:last-child {
+	margin-right: 15px;
 }
 
 .CardZ {
@@ -45,7 +54,7 @@
 	width: 100px;
 	white-space: nowrap;
 
-	color: var(--color-background);
+	color: var(--color-background-black);
 	font-weight: 700;
 	font-size: 18px;
 

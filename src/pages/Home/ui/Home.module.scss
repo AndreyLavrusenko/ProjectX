@@ -4,12 +4,9 @@
 	justify-content: space-between;
 }
 
-.Page {
-	width: 100%;
-
+.SliderContainer {
 	display: flex;
 	flex-direction: column;
 
-	gap: 20px;
-	padding: 0 20px;
+	gap: 10px;
 }

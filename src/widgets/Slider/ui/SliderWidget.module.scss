@@ -1,0 +1,12 @@
+.Slider {
+	display: flex;
+	flex-direction: column;
+
+	gap: 10px;
+}
+
+.TitleFlex {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}

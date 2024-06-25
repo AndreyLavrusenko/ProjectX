@@ -1,0 +1,38 @@
+.Button {
+	width: 100%;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	padding: 14px 10px;
+
+	font-weight: var(--font-weight-semibold);
+	font-size: 16px;
+
+	border: none;
+	border-radius: 12px;
+	color: var(--color-background-black);
+	background-color: var(--color-accent);
+
+	transition: transform .3s ease;
+	cursor: pointer;
+}
+
+
+@media (hover: hover) and (pointer: fine) {
+	.Button:hover {
+		transform: var(--default-desktop-scale-animation-hover);
+	}
+
+	.Button:active {
+		transform: var(--default-desktop-scale-animation-active);
+	}
+}
+
+@media (hover: none) and (pointer: coarse) {
+	.Button:hover {
+		transform: var(--default-mobile-scale-animation-hover);
+	}
+
+}
